@@ -29,12 +29,13 @@ void PrintArray(int[, ] array)
 int [, ] array = new int[3,4];
 FillArray(array);
 PrintArray(array);
-for (int i = 0; i < array.GetLength(1); i++)
+for (int j = 0; j < array.GetLength(1); j++)
 {
-    double arithmeticMean = 0;
-    for (int j = 0; j < array.GetLength(0); j++)
+    double summ = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        arithmeticMean += array[j, i];
+        summ += array[i, j];
     }
-    Console.WriteLine($"Среднее арифметическое элементов столбца {i + 1} = {Math.Round(arithmeticMean / array.GetLength(0),2)}");
+    double arithmeticMean = summ / array.GetLength(0);
+    Console.WriteLine($"Среднее арифметическое элементов столбца {j + 1} = {Math.Round(arithmeticMean,2)}");
 }
